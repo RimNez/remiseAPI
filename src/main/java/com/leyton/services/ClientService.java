@@ -1,5 +1,6 @@
 package com.leyton.services;
 
+import com.leyton.ExceptionCustom;
 import com.leyton.models.Client;
 import com.leyton.utils.DiscountUtils;
 
@@ -13,29 +14,48 @@ public class ClientService {
      * Service that returns a list of clients from a file and calculate discount
      * @param path file path
      * @return list of clients
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException ExceptionCustom
      */
     public Set<Client> importClient(String path) throws FileNotFoundException {
-        Scanner read = new Scanner(new File(path));
-        read.useDelimiter("-");
+        Scanner read = null;
         Set<Client> clients = new HashSet<>();
 
-        while (read.hasNext()) {
-            Client client = new Client();
-            // Read the client last name
-            client.setLastName(read.next());
-            // Read the client first name
-            client.setFirstName(read.next());
-            // Read the client seniority
-            client.setSeniority(read.nextInt());
+        try{
+            read = new Scanner(new File(path));
+            read.useDelimiter("-");
 
-            // calculate the discount from the seniority
-            client.setDiscount(DiscountUtils.calculateDiscount(client.getSeniority()));
+            while (read.hasNext()) {
+                Client client = new Client();
 
-            // Add the client to the list
-            clients.add(client);
+                // Read the client last name
+                client.setLastName(read.next());
+                // Read the client first name
+                client.setFirstName(read.next());
+                // Read the client seniority
+                //client.setSeniority(read.nextInt());
+
+                String s = read.next();System.out.println(s);
+                if (s.equals(" ") || s.equals("   ")) {
+                    throw new ExceptionCustom("You cannot have a space and tabs instead of an int. Please enter the appropriate field.");
+
+                }
+                else {
+                    // Read the client seniority
+                    client.setSeniority(Integer.parseInt(s));
+                }
+
+                // calculate the discount from the seniority
+                client.setDiscount(DiscountUtils.calculateDiscount(client.getSeniority()));
+
+                // Add the client to the list
+                clients.add(client);
+
+            }
+        } catch (ExceptionCustom e) {
+            System.out.println(e.getMessage());
         }
-        return clients;
+        read.close();
 
+        return clients;
     }
 }

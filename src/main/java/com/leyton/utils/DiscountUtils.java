@@ -2,7 +2,7 @@ package com.leyton.utils;
 
 public class DiscountUtils {
     // function that takes an Integer(seniority) and returns a Double(discount) according to the value of the seniority
-    public static Double calculateDiscount( Integer seniority) {
+    public static double calculateDiscount( int seniority) {
         double discount;
 
         if ( seniority < 3) { //if the seniority of the client  is lower than 3 years Then the discount would be 0%

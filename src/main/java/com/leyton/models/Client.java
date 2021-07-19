@@ -5,13 +5,13 @@ import java.util.Objects;
 public class Client {
     private String lastName;
     private String firstName;
-    private Integer seniority;
-    private Double discount;
+    private int seniority;
+    private double discount;
 
     public Client() {
     }
 
-    public Client(String lastName, String firstName, Integer seniority, Double discount) {
+    public Client(String lastName, String firstName, int seniority, double discount) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.seniority = seniority;
@@ -38,7 +38,7 @@ public class Client {
         return seniority;
     }
 
-    public void setSeniority(Integer seniority) {
+    public void setSeniority(int seniority) {
         this.seniority = seniority;
     }
 
@@ -46,7 +46,7 @@ public class Client {
         return discount;
     }
 
-    public void setDiscount(Double discount) {
+    public void setDiscount(double discount) {
         this.discount = discount;
     }
 
