@@ -8,11 +8,11 @@ import java.util.Set;
 
 
 public class Main {
-    public static void main (String [] args) throws IOException, ExceptionCustom {
+    public static void main (String [] args) throws IOException, MandatoryFieldException {
 
         ClientService service = new ClientService();
         Set<Client> clients =
-                 service.importClient("/home/rimnez/ImportFileAPI/src/main/resources/exemple.txt");
+                 service.importClient("/home/rimnez/ImportFileAPI/src/main/resources/clients.txt");
 
        //foreach using method reference
         clients.forEach(System.out::println);
