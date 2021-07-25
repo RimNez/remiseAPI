@@ -1,4 +1,4 @@
-package com.leyton;
+package com.leyton.exceptions;
 
 public class ExceptionCustom extends Exception{
     public ExceptionCustom(String msg) {
