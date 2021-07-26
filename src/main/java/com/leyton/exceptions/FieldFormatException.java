@@ -1,4 +1,4 @@
-package com.leyton;
+package com.leyton.exceptions;
 
 public class FieldFormatException extends Exception{
     public FieldFormatException(String msg) {
