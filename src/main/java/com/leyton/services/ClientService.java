@@ -1,17 +1,12 @@
 package com.leyton.services;
 
 import com.leyton.models.Client;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Set;
 
-
 public interface ClientService {
-     static final Logger logger = LoggerFactory.getLogger(ClientServiceImpl.class);
 
     /**
      * Service that returns a list of clients from a file and calculate discount
@@ -20,7 +15,6 @@ public interface ClientService {
      * @throws FileNotFoundException NumberFormatException MandatoryFieldException FieldFormatException
      */
      public Set<Client> importClient(final String path) throws IOException;
-
 
     /**
      * Service that take a list of clients and create a file into the specified path

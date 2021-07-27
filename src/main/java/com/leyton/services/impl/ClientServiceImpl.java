@@ -1,8 +1,9 @@
-package com.leyton.services;
+package com.leyton.services.impl;
 
 import com.leyton.exceptions.FieldFormatException;
 import com.leyton.exceptions.MandatoryFieldException;
 import com.leyton.models.Client;
+import com.leyton.services.ClientService;
 import com.leyton.utils.DiscountUtils;
 
 import org.apache.commons.io.FilenameUtils;
@@ -16,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @Service
-public class ClientServiceImpl implements ClientService{
+public class ClientServiceImpl implements ClientService {
 
     private static final Logger logger = LoggerFactory.getLogger(ClientServiceImpl.class);
 
