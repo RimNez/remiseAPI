@@ -3,33 +3,25 @@ package com.leyton.controllers;
 import com.leyton.models.Client;
 import com.leyton.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.Set;
 
-@Controller
+@RestController
 public class ClientController {
 
+    @Autowired
+    private final ClientService clientService;
 
-       // private final ClientService clientService;
+    public ClientController(ClientService clientService) {
+        this.clientService = clientService;
+    }
 
-       /* @Autowired
-        public ClientController(ClientService clientService) {
-            this.clientService = clientService;
-        }*/
+    @GetMapping("/")
+        public Set<Client> importFile () throws IOException {
 
+        return clientService.importClient("/home/rimnez/ImportFileAPI/src/main/resources/exemple.txt");
 
-        @RequestMapping("/")
-        public String importFile (Model model) {
-
-            return "view";
-        }
-
-
+    }
 
     }

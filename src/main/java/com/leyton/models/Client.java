@@ -53,8 +53,7 @@ public class Client {
     @Override
     public String toString() {
         return lastName + '-' + firstName + '-' +
-                seniority +
-                "-" + discount ;
+                seniority + "-" + discount ;
     }
 
     @Override
