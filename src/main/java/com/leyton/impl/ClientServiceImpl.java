@@ -1,9 +1,9 @@
-package com.leyton.services.impl;
+package com.leyton.impl;
 
+import com.leyton.ClientService;
 import com.leyton.exceptions.FieldFormatException;
 import com.leyton.exceptions.MandatoryFieldException;
 import com.leyton.models.Client;
-import com.leyton.services.ClientService;
 import com.leyton.utils.DiscountUtils;
 
 import org.apache.commons.io.FilenameUtils;

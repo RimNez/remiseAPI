@@ -1,5 +1,6 @@
 package com.leyton.services;
 
+import com.leyton.ClientService;
 import com.leyton.models.Client;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,11 +21,11 @@ public class ClientServiceTest {
     @Test
     public void importClientTest() throws IOException {
         //GIVEN
-        String path = "C:\\Users\\nezha\\IdeaProjects\\remiseAPI\\src\\test\\resources\\clients.txt";
+        String path = "/home/rimnez/ImportFileAPI/src/main/resources/exemple.txt";
         //WHEN
         Set<Client> clients = clientService.importClient(path);
-        //THEN
-        Assert.assertEquals(5, clients.size());
-        Assert.assertEquals("NEZHARI", clients.stream().findFirst().get().getLastName());
+        //THEN : The number of clients should be :
+        Assert.assertEquals(294, clients.size());
+        Assert.assertEquals("Benjie", clients.stream().filter(c->c.getSeniority()==(7)).findFirst().get().getLastName());
     }
 }

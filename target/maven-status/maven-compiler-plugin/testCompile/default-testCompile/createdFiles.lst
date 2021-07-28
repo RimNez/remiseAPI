@@ -1,2 +1,2 @@
-com\leyton\services\DiscountUtilsTest.class
-com\leyton\services\ClientServiceTest.class
+com/leyton/utils/DiscountUtilsTest.class
+com/leyton/services/ClientServiceTest.class
