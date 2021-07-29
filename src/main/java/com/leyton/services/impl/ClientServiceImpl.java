@@ -1,6 +1,7 @@
-package com.leyton.impl;
+package com.leyton.services.impl;
 
-import com.leyton.ClientService;
+import com.leyton.repositories.ClientRepository;
+import com.leyton.services.ClientService;
 import com.leyton.exceptions.FieldFormatException;
 import com.leyton.exceptions.MandatoryFieldException;
 import com.leyton.models.Client;
@@ -9,6 +10,7 @@ import com.leyton.utils.DiscountUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -18,6 +20,9 @@ import java.util.*;
 
 @Service
 public class ClientServiceImpl implements ClientService {
+
+    @Autowired
+    ClientRepository repository;
 
     private static final Logger logger = LoggerFactory.getLogger(ClientServiceImpl.class);
 
@@ -105,5 +110,15 @@ public class ClientServiceImpl implements ClientService {
                     System.out.println(e.getMessage());
                 }
             }
+    }
+
+    @Override
+    public void save (Client client) {
+        repository.save(client);
+    }
+
+    @Override
+    public Client findByLastName(final String lastName) {
+        return repository.findById(lastName).orElse(null);
     }
 }

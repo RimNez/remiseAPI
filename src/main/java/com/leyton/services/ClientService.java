@@ -1,4 +1,4 @@
-package com.leyton;
+package com.leyton.services;
 
 import com.leyton.models.Client;
 
@@ -14,7 +14,7 @@ public interface ClientService {
      * @return list of clients
      * @throws FileNotFoundException NumberFormatException MandatoryFieldException FieldFormatException
      */
-     public Set<Client> importClient(final String path) throws IOException;
+     Set<Client> importClient(final String path) throws IOException;
 
     /**
      * Service that take a list of clients and create a file into the specified path
@@ -22,7 +22,7 @@ public interface ClientService {
      * @param path file path
      * @throws IOException
      */
-     public void createNewFile(Set<Client> clients, final String path) throws IOException;
+     void createNewFile(Set<Client> clients, final String path) throws IOException;
 
      /**
      * Service that read a file line by line and calculate discount
@@ -30,6 +30,10 @@ public interface ClientService {
      * @param clients list of clients
      * @throws FileNotFoundException IOException MandatoryFieldException FieldFormatException
      */
-     public void readAndModifyFile(final String path, Set<Client> clients) throws IOException;
+     void readAndModifyFile(final String path, Set<Client> clients) throws IOException;
+
+     void save (Client client);
+
+     Client findByLastName(final String lastName);
 
 }

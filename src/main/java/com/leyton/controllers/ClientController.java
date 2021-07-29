@@ -1,15 +1,11 @@
 package com.leyton.controllers;
 
 import com.leyton.models.Client;
-import com.leyton.ClientService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.leyton.services.ClientService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Set;
 
 @RestController
@@ -44,6 +40,17 @@ public class ClientController {
         //Save the file locally
         File temp_file = new File("/home/rimnez/ImportFileAPI/src/main/resources/"+fileName);
         file.transferTo(temp_file);
+        //Save the result list of clients on the database
+        for(Client client : clientService.importClient(temp_file.getPath())) {
+            clientService.save(client);
+        }
+
         return clientService.importClient(temp_file.getPath());
     }
+
+    @GetMapping("/{lastName}")
+    public Client findByLastName(@PathVariable final String lastName) {
+        return clientService.findByLastName(lastName);
+    }
+
 }

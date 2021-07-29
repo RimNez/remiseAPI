@@ -1,11 +1,23 @@
 package com.leyton.models;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.Setting;
+
 import java.util.Objects;
 
+@Document(indexName = "client")
 public class Client {
+
+    @Id
+    @Field()
     private String lastName;
+    @Field()
     private String firstName;
+    @Field()
     private int seniority;
+    @Field()
     private double discount;
 
     public Client() {

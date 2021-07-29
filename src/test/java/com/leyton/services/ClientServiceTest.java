@@ -1,6 +1,5 @@
 package com.leyton.services;
 
-import com.leyton.ClientService;
 import com.leyton.models.Client;
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,9 +16,8 @@ import java.util.Set;
 public class ClientServiceTest {
     @Autowired
     private ClientService clientService;
-
     @Test
-    public void importClientTest() throws IOException {
+    public void import_client_size_test() throws IOException {
         //GIVEN
         String path = "/home/rimnez/ImportFileAPI/src/main/resources/exemple.txt";
         //WHEN
@@ -28,4 +26,5 @@ public class ClientServiceTest {
         Assert.assertEquals(294, clients.size());
         Assert.assertEquals("Benjie", clients.stream().filter(c->c.getSeniority()==(7)).findFirst().get().getLastName());
     }
+
 }

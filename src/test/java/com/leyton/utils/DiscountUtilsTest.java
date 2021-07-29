@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotEquals;
 //@DisplayName(value = "discount utils test")
 public class DiscountUtilsTest {
 
-    //------------- OK TEST --------------
+    //------------- OK TEST -------------
 
     @Test
     public void calculate_discount_seniority_5_OK_Test() {
