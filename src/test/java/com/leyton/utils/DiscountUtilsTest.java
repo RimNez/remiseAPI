@@ -65,4 +65,14 @@ public class DiscountUtilsTest {
         //THEN
         assertNotEquals(5.0, remise);
     }
+
+    @Test
+    public void calculate_discount_small_seniority_KO_test() {
+        //GIVEN
+        int seniority = 1;
+        //WHEN
+        double remise = DiscountUtils.calculateDiscount(seniority);
+        //THEN
+        assertNotEquals(10.00, remise, 0.0);
+    }
 }

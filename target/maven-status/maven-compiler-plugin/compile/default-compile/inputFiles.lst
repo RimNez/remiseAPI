@@ -1,7 +1,9 @@
-/home/rimnez/ImportFileAPI/src/main/java/com/leyton/ClientService.java
+/home/rimnez/ImportFileAPI/src/main/java/com/leyton/repositories/ClientRepository.java
+/home/rimnez/ImportFileAPI/src/main/java/com/leyton/services/ClientService.java
 /home/rimnez/ImportFileAPI/src/main/java/com/leyton/controllers/ClientController.java
+/home/rimnez/ImportFileAPI/src/main/java/com/leyton/configurations/Config.java
 /home/rimnez/ImportFileAPI/src/main/java/com/leyton/SpringBootApiApplication.java
-/home/rimnez/ImportFileAPI/src/main/java/com/leyton/impl/ClientServiceImpl.java
+/home/rimnez/ImportFileAPI/src/main/java/com/leyton/services/impl/ClientServiceImpl.java
 /home/rimnez/ImportFileAPI/src/main/java/com/leyton/models/Client.java
 /home/rimnez/ImportFileAPI/src/main/java/com/leyton/utils/DiscountUtils.java
 /home/rimnez/ImportFileAPI/src/main/java/com/leyton/exceptions/MandatoryFieldException.java
