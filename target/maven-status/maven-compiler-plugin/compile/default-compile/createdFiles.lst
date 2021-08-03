@@ -1,10 +1,10 @@
+com/leyton/SpringApiApplication.class
 com/leyton/exceptions/ExceptionCustom.class
 com/leyton/exceptions/MandatoryFieldException.class
 com/leyton/controllers/ClientController.class
 com/leyton/utils/DiscountUtils.class
-com/leyton/SpringApplication.class
+com/leyton/configurations/ElasticSearchConfig.class
 com/leyton/services/impl/ClientServiceImpl.class
-com/leyton/configurations/Config.class
 com/leyton/exceptions/FieldFormatException.class
 com/leyton/models/Client.class
 com/leyton/repositories/ClientRepository.class
