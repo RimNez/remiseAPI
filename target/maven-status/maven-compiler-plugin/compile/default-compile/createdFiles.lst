@@ -1,8 +1,8 @@
 com/leyton/exceptions/ExceptionCustom.class
-com/leyton/SpringBootApiApplication.class
 com/leyton/exceptions/MandatoryFieldException.class
 com/leyton/controllers/ClientController.class
 com/leyton/utils/DiscountUtils.class
+com/leyton/SpringApplication.class
 com/leyton/services/impl/ClientServiceImpl.class
 com/leyton/configurations/Config.class
 com/leyton/exceptions/FieldFormatException.class

@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ImportFileAPI" target="8" />
+      <module name="ImportFileAPI" target="1.8" />
       <module name="remiseAPI" target="8" />
     </bytecodeTargetLevel>
   </component>
