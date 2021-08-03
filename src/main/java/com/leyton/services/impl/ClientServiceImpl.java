@@ -24,7 +24,7 @@ public class ClientServiceImpl implements ClientService {
     @Autowired
     ClientRepository repository;
 
-    private static final Logger logger = LoggerFactory.getLogger(ClientServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClientServiceImpl.class);
 
     /**
      * Service that returns a list of clients from a file and calculate discount
@@ -38,7 +38,7 @@ public class ClientServiceImpl implements ClientService {
         //Get the extension of the file using FilenameUtils.getExtension() from the library commons.io
         String extension = FilenameUtils.getExtension(path);
         if (! (extension.equals("txt"))) {
-            logger.error(" Please Enter the appropriate path file (.txt)");
+            LOGGER.error(" Please Enter the appropriate path file (.txt)");
         }
         else {
             readAndModifyFile(path,clients);
@@ -90,15 +90,15 @@ public class ClientServiceImpl implements ClientService {
                 try {
                     String seniority = array[2].trim(); //eliminating leading and trailing spaces
                     if (seniority.isEmpty()) { //Customized Exception for empty fields
-                        logger.warn("Mandatory Field Exception");
-                        logger.info("Name of the client with the exception : {}", client.getLastName());
+                        LOGGER.warn("Mandatory Field Exception");
+                        LOGGER.info("Name of the client with the exception : {}", client.getLastName());
                         throw new MandatoryFieldException("####You cannot have an empty field. Please enter the appropriate field.");
                     } else { //else Parsing the String into an Integer and putting it in the object client
                         try {
                             client.setSeniority(Integer.parseInt(seniority));// Read the client seniority
                         } catch (NumberFormatException e) {//Exceptions for inappropriate fields
-                            logger.error("Invalid integer : Field Format Exception");
-                            logger.info("Name of the client with the exception : {}", client.getLastName());
+                            LOGGER.error("Invalid integer : Field Format Exception");
+                            LOGGER.info("Name of the client with the exception : {}", client.getLastName());
                             throw new FieldFormatException("####You cannot have a string instead of an int. Please enter the appropriate field.");
                         }
                         // calculate the discount from the seniority

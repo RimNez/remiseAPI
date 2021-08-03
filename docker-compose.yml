@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+
+  docker-rim-v1:
+    image: docker-rim-v1:latest
+    restart: always
+    ports:
+      - "8081:8081"
+    depends_on:
+      - elasticsearch
+    networks:
+      - elastic
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.4
+    ports:
+      - "9201:9201"
+    networks:
+      - elastic
+networks:
+  elastic:
+    driver: bridge
+
